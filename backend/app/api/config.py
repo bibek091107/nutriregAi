@@ -46,7 +46,10 @@ class Settings:
         self.session_ttl_hours: int = int(
             os.environ.get("SESSION_TTL_HOURS", str(SESSION_TTL_HOURS))
         )
-        self.upload_dir: str = os.environ.get("UPLOAD_DIR", UPLOAD_DIR)
+        default_upload_dir = (
+            "/tmp/uploads" if os.environ.get("VERCEL") else UPLOAD_DIR
+        )
+        self.upload_dir: str = os.environ.get("UPLOAD_DIR", default_upload_dir)
 
 
 @lru_cache(maxsize=1)

@@ -17,8 +17,6 @@ uvicorn[standard]==0.40.0
 asyncpg==0.31.0
 # Multipart parsing for the document-vault upload endpoint.
 python-multipart==0.0.20
+# PDF audit report generation
+reportlab==5.0.1
 
-# --- tests ------------------------------------------------------------------
-# Used only by backend/tests/test_contract.py, which pins the API's request
-# models to the database's CHECK constraints.
-pytest==9.1.1

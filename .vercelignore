@@ -1,0 +1,18 @@
+# Vercel deployment exclusions
+# Keep offline raw PDFs, caches, and dev artifacts out of serverless bundles
+backend/regulatory_knowledge/
+regulatory_knowledge/
+backend/app/uploads/
+backend/tests/
+backend/scripts/
+backend/.pytest_cache/
+backend/.venv/
+backend/*_test.py
+backend/test_pdf.py
+db/
+*.csv
+.git
+.venv
+__pycache__
+*.pyc
+*.pdf

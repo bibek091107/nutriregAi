@@ -36,9 +36,10 @@ def _cookie_kwargs() -> dict:
         "httponly": True,
         "samesite": "lax",
         "max_age": settings.session_ttl_hours * 3600,
-        # Local development serves plain HTTP, so a Secure cookie would be
-        # silently dropped by the browser and every request would be anonymous.
-        "secure": os.environ.get("COOKIE_SECURE", "").lower() in {"1", "true", "yes"},
+        "secure": (
+            os.environ.get("COOKIE_SECURE", "").lower() in {"1", "true", "yes"}
+            or bool(os.environ.get("VERCEL"))
+        ),
     }
 
 
