@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Material Symbols is a variable ligature font, exactly as in the Stitch export. */
+  .material-symbols-outlined {
+    font-family: "Material Symbols Outlined";
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: "liga";
+    -webkit-font-smoothing: antialiased;
+    font-variation-settings:
+      "FILL" 0,
+      "wght" 400,
+      "GRAD" 0,
+      "opsz" 24;
+    font-feature-settings: "liga";
+  }
+
+  :focus-visible {
+    outline: 2px solid theme("colors.secondary");
+    outline-offset: 2px;
+  }
+
+  /* The approved design uses a 1px hairline scrollbar in dense tables. */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: theme("colors.surface-container-low");
+  }
+  ::-webkit-scrollbar-thumb {
+    background: theme("colors.outline-variant");
+    border-radius: 2px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: theme("colors.outline");
+  }
+}
+
+@layer components {
+  .animate-in-fade-in {
+    animation: fadeIn 200ms ease-out;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

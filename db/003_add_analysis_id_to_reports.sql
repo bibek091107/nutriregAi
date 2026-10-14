@@ -1,0 +1,1 @@
+ALTER TABLE reports ADD COLUMN analysis_id UUID REFERENCES analyses(id) ON DELETE CASCADE;
